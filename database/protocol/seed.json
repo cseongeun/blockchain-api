@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "network": 2,
+    "name": "PancakeSwap",
+    "token": 2,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 2,
+    "network": 1,
+    "name": "SushiSwap",
+    "token": 32,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 3,
+    "network": 2,
+    "name": "AutoFarm",
+    "token": 62,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 4,
+    "network": 2,
+    "name": "BeltFi",
+    "token": 59,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 5,
+    "network": 2,
+    "name": "BakerySwap",
+    "token": 67,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 6,
+    "network": 1,
+    "name": "UniSwap",
+    "token": 44,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 7,
+    "network": 2,
+    "name": "MDEX",
+    "token": 68,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 8,
+    "network": 1,
+    "name": "Convex",
+    "token": 61,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 9,
+    "network": 2,
+    "name": "WaultSwap",
+    "token": 60,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 10,
+    "network": 2,
+    "name": "ApeSwap",
+    "token": 69,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 11,
+    "network": 4,
+    "name": "ApeSwap",
+    "token": 70,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 12,
+    "network": 4,
+    "name": "SushiSwap",
+    "token": 73,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 13,
+    "network": 2,
+    "name": "SushiSwap",
+    "token": 58,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 14,
+    "network": 8,
+    "name": "SushiSwap",
+    "token": 81,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 15,
+    "network": 5,
+    "name": "SushiSwap",
+    "token": 82,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 16,
+    "network": 6,
+    "name": "MDEX",
+    "token": 83,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 17,
+    "network": 6,
+    "name": "SushiSwap",
+    "token": 91,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 18,
+    "network": 2,
+    "name": "BiSwap",
+    "token": 99,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 19,
+    "network": 2,
+    "name": "AirNFT",
+    "token": null,
+    "link": null,
+    "status": true
+  },
+  {
+    "id": 20,
+    "network": 2,
+    "name": "Venus",
+    "token": 13,
+    "link": null,
+    "status": true
+  }
+]

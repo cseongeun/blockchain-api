@@ -1,0 +1,360 @@
+[INFO] 2021-09-23 10:44:17:4417 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 10:44:17:4417 - connect ECONNREFUSED 127.0.0.1:5432
+[INFO] 2021-09-23 10:49:47:4947 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 10:49:48:4948 - Data type "timestamptz" in "User.createdAt" is not supported by "mysql" database.
+[INFO] 2021-09-23 10:51:41:5141 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 10:51:42:5142 - Data type "timestamptz" in "User.createdAt" is not supported by "mysql" database.
+[INFO] 2021-09-23 10:53:01:531 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 10:57:28:5728 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 10:57:48:5748 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 10:58:34:5834 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 11:53:46:5346 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 11:53:46:5346 - Entity "User" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 11:54:39:5439 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 11:54:47:5447 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 11:54:48:5448 - Entity "Network" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 11:55:10:5510 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 11:55:10:5510 - Entity "Network" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 11:56:48:5648 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 11:56:48:5648 - Entity "Network" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 11:57:10:5710 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 11:57:10:5710 - Entity "Network" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 11:57:27:5727 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 11:57:27:5727 - Entity "Network" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 12:03:32:332 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:04:27:427 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:04:33:433 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:04:34:434 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/network/Network.ts[0m:[93m8[0m:[93m59[0m - [91merror[0m[90m TS2304: [0mCannot find name 'EmptyClass'.
+
+[7m8[0m export class Network  extends BaseTimeEntity(StatusEntity(EmptyClass)){
+[7m [0m [91m                                                          ~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:04:39:439 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:04:39:439 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/network/Network.ts[0m:[93m8[0m:[93m59[0m - [91merror[0m[90m TS2304: [0mCannot find name 'EmptyClass'.
+
+[7m8[0m export class Network  extends BaseTimeEntity(StatusEntity(EmptyClass)){
+[7m [0m [91m                                                          ~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:04:53:453 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:04:54:454 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/network/Network.ts[0m:[93m7[0m:[93m59[0m - [91merror[0m[90m TS2304: [0mCannot find name 'EmptyClass'.
+
+[7m7[0m export class Network  extends BaseTimeEntity(StatusEntity(EmptyClass)){
+[7m [0m [91m                                                          ~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:05:02:52 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:05:02:52 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/network/Network.ts[0m:[93m7[0m:[93m59[0m - [91merror[0m[90m TS2304: [0mCannot find name 'EmptyClass'.
+
+[7m7[0m export class Network  extends BaseTimeEntity(StatusEntity(EmptyClass)){
+[7m [0m [91m                                                          ~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:05:18:518 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:05:26:526 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:05:27:527 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/network/Network.ts[0m:[93m7[0m:[93m59[0m - [91merror[0m[90m TS2345: [0mArgument of type 'typeof EmptyEntity' is not assignable to parameter of type 'Constructor<{}>'.
+  Cannot assign an abstract constructor type to a non-abstract constructor type.
+
+[7m7[0m export class Network  extends BaseTimeEntity(StatusEntity(EmptyEntity)){
+[7m [0m [91m                                                          ~~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:05:30:530 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:05:30:530 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/network/Network.ts[0m:[93m7[0m:[93m59[0m - [91merror[0m[90m TS2345: [0mArgument of type 'typeof EmptyEntity' is not assignable to parameter of type 'Constructor<{}>'.
+  Cannot assign an abstract constructor type to a non-abstract constructor type.
+
+[7m7[0m export class Network  extends BaseTimeEntity(StatusEntity(EmptyEntity)){
+[7m [0m [91m                                                          ~~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:05:51:551 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:06:27:627 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:06:33:633 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:06:38:638 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:06:43:643 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:06:43:643 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/IdEntity.ts[0m:[93m9[0m:[93m61[0m - [91merror[0m[90m TS2304: [0mCannot find name 'TBaseTime'.
+
+[7m9[0m export function IdEntity<TId extends Constructor>(BaseTime: TBaseTime) {
+[7m [0m [91m                                                            ~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:06:59:659 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:07:05:75 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:07:06:76 - Entity "Network" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 12:07:22:722 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:07:34:734 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:07:41:741 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:08:04:84 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:08:05:85 - Entity "Network" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 12:08:09:89 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:08:34:834 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:08:34:834 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m7[0m:[93m28[0m - [91merror[0m[90m TS2507: [0mType '<TBaseTime extends Constructor<{}>>(BaseTime: TBaseTime) => ((abstract new (...args: any[]) => AbstractEntity) & { prototype: BaseTimeEntity<any>.AbstractEntity; }) & TBaseTime' is not a constructor function type.
+
+[7m7[0m export class Token extends BaseTimeEntity {
+[7m [0m [91m                           ~~~~~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:08:50:850 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:08:51:851 - Maximum call stack size exceeded
+[INFO] 2021-09-23 12:08:55:855 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:09:01:91 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:09:01:91 - Maximum call stack size exceeded
+[INFO] 2021-09-23 12:09:11:911 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:09:12:912 - Maximum call stack size exceeded
+[INFO] 2021-09-23 12:10:01:101 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:10:14:1014 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:10:15:1015 - Maximum call stack size exceeded
+[INFO] 2021-09-23 12:10:20:1020 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:10:32:1032 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:10:33:1033 - Maximum call stack size exceeded
+[INFO] 2021-09-23 12:10:41:1041 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:10:42:1042 - Maximum call stack size exceeded
+[INFO] 2021-09-23 12:10:54:1054 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:11:11:1111 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:11:27:1127 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:11:35:1135 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:12:56:1256 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:12:57:1257 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:13:44:1344 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:13:44:1344 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m34[0m:[93m15[0m - [91merror[0m[90m TS2304: [0mCannot find name 'name'.
+
+[7m34[0m   @JoinColumn(name = 'pair0_id')
+[7m  [0m [91m              ~~~~[0m
+[96msrc/entity/token/Token.ts[0m:[93m34[0m:[93m15[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Type '"pair0_id"' has no properties in common with type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'JoinColumnOptions[]'.
+
+[7m34[0m   @JoinColumn(name = 'pair0_id')
+[7m  [0m [91m              ~~~~~~~~~~~~~~~~~[0m
+
+
+[INFO] 2021-09-23 12:13:58:1358 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:13:59:1359 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m34[0m:[93m15[0m - [91merror[0m[90m TS2304: [0mCannot find name 'name'.
+
+[7m34[0m   @JoinColumn(name = 'pair0 token')
+[7m  [0m [91m              ~~~~[0m
+[96msrc/entity/token/Token.ts[0m:[93m34[0m:[93m15[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Type '"pair0 token"' has no properties in common with type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'JoinColumnOptions[]'.
+
+[7m34[0m   @JoinColumn(name = 'pair0 token')
+[7m  [0m [91m              ~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[INFO] 2021-09-23 12:14:22:1422 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:14:23:1423 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:14:38:1438 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:14:40:1440 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:14:55:1455 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:14:56:1456 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:16:01:161 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:16:02:162 - Referenced column pair0 was not found in entity Token
+[INFO] 2021-09-23 12:16:05:165 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:16:06:166 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m63[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', referencedColumnName: })
+[7m  [0m [91m                                                              ~[0m
+
+[INFO] 2021-09-23 12:16:40:1640 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:16:44:1644 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:16:44:1644 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m63[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', referencedColumnName: })
+[7m  [0m [91m                                                              ~[0m
+
+[INFO] 2021-09-23 12:16:57:1657 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:16:57:1657 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:17:27:1727 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:17:28:1728 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:17:52:1752 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:17:53:1753 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:17:59:1759 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:18:00:180 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:18:19:1819 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:18:19:1819 - Referenced column pair0 was not found in entity Token
+[INFO] 2021-09-23 12:18:34:1834 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:18:35:1835 - Duplicate foreign key constraint name 'fk_token_token'
+[INFO] 2021-09-23 12:20:05:205 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:20:05:205 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m4[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; constraintName: any; }' is not assignable to parameter of type 'JoinColumnOptions'.
+      Object literal may only specify known properties, and 'constraintName' does not exist in type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; constraintName: any; }' is not assignable to parameter of type 'JoinColumnOptions[]'.
+      Object literal may only specify known properties, and 'name' does not exist in type 'JoinColumnOptions[]'.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', constraintName })
+[7m  [0m [91m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'constraintName'. Either declare one or provide an initializer.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', constraintName })
+[7m  [0m [91m                                        ~~~~~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:20:58:2058 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:20:59:2059 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m4[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions'.
+      Object literal may only specify known properties, and 'r' does not exist in type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions[]'.
+      Object literal may only specify known properties, and 'name' does not exist in type 'JoinColumnOptions[]'.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'r'. Either declare one or provide an initializer.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m                                        ~[0m
+
+[INFO] 2021-09-23 12:21:45:2145 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:21:46:2146 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m4[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions'.
+      Object literal may only specify known properties, and 'r' does not exist in type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions[]'.
+      Object literal may only specify known properties, and 'name' does not exist in type 'JoinColumnOptions[]'.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'r'. Either declare one or provide an initializer.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m                                        ~[0m
+
+[INFO] 2021-09-23 12:22:06:226 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:22:07:227 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m4[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions'.
+      Object literal may only specify known properties, and 'r' does not exist in type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions[]'.
+      Object literal may only specify known properties, and 'name' does not exist in type 'JoinColumnOptions[]'.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'r'. Either declare one or provide an initializer.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m                                        ~[0m
+
+[INFO] 2021-09-23 12:22:17:2217 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:22:17:2217 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m4[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions'.
+      Object literal may only specify known properties, and 'r' does not exist in type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions[]'.
+      Object literal may only specify known properties, and 'name' does not exist in type 'JoinColumnOptions[]'.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'r'. Either declare one or provide an initializer.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m                                        ~[0m
+
+[INFO] 2021-09-23 12:23:37:2337 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:23:38:2338 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m4[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  Overload 1 of 3, '(options: JoinColumnOptions): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions'.
+      Object literal may only specify known properties, and 'r' does not exist in type 'JoinColumnOptions'.
+  Overload 2 of 3, '(options: JoinColumnOptions[]): PropertyDecorator', gave the following error.
+    Argument of type '{ name: string; r: any; }' is not assignable to parameter of type 'JoinColumnOptions[]'.
+      Object literal may only specify known properties, and 'name' does not exist in type 'JoinColumnOptions[]'.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/entity/token/Token.ts[0m:[93m38[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'r'. Either declare one or provide an initializer.
+
+[7m38[0m   @JoinColumn({ name: 'pair1_token_id', r })
+[7m  [0m [91m                                        ~[0m
+
+[INFO] 2021-09-23 12:23:46:2346 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:24:13:2413 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:24:20:2420 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:24:34:2434 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:24:46:2446 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:35:32:3532 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:35:33:3533 - Entity "FarmRewardToken" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 12:35:48:3548 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:35:49:3549 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/farm/FarmStakeToken.ts[0m:[93m6[0m:[93m38[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Base'.
+
+[7m6[0m export class FarmStakeToken  extends Base{
+[7m [0m [91m                                     ~~~~[0m
+
+[INFO] 2021-09-23 12:35:55:3555 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:35:55:3555 - Entity "FarmRewardToken" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+[INFO] 2021-09-23 12:36:02:362 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 12:36:02:362 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/farm/FarmRewardToken.ts[0m:[93m6[0m:[93m38[0m - [91merror[0m[90m TS2552: [0mCannot find name 'IdEntity'. Did you mean 'Entity'?
+
+[7m6[0m export class FarmRewardToken extends IdEntity(EmptyEntity) {
+[7m [0m [91m                                     ~~~~~~~~[0m
+[96msrc/entity/farm/FarmRewardToken.ts[0m:[93m6[0m:[93m47[0m - [91merror[0m[90m TS2304: [0mCannot find name 'EmptyEntity'.
+
+[7m6[0m export class FarmRewardToken extends IdEntity(EmptyEntity) {
+[7m [0m [91m                                              ~~~~~~~~~~~[0m
+
+[INFO] 2021-09-23 12:36:09:369 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:37:19:3719 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:41:40:4140 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 12:41:47:4147 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 14:41:26:4126 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 14:41:27:4127 - Data type "Token" in "Lending.token" is not supported by "mysql" database.
+[INFO] 2021-09-23 14:42:04:424 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 14:42:05:425 - Duplicate key name 'idx_lending_1'
+[INFO] 2021-09-23 14:42:13:4213 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:12:48:1248 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:12:56:1256 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:14:00:140 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:17:53:1753 - Server is running on http://localhost:4000
+[ERROR] 2021-09-23 15:17:53:1753 - ⨯ Unable to compile TypeScript:
+[96msrc/entity/UuidEntity.ts[0m:[93m9[0m:[93m35[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  The last overload gave the following error.
+    Type '"uuid"' is not assignable to type 'PrimaryGeneratedColumnType'.
+
+[7m9[0m         @PrimaryGeneratedColumn({ type: 'uuid' })
+[7m [0m [91m                                  ~~~~[0m
+
+  [96mnode_modules/typeorm/decorator/options/PrimaryGeneratedColumnNumericOptions.d.ts[0m:[93m9[0m:[93m5[0m
+    [7m9[0m     type?: PrimaryGeneratedColumnType;
+    [7m [0m [96m    ~~~~[0m
+    The expected type comes from property 'type' which is declared here on type 'PrimaryGeneratedColumnNumericOptions'
+  [96mnode_modules/typeorm/decorator/columns/PrimaryGeneratedColumn.d.ts[0m:[93m10[0m:[93m25[0m
+    [7m10[0m export declare function PrimaryGeneratedColumn(options: PrimaryGeneratedColumnNumericOptions): PropertyDecorator;
+    [7m  [0m [96m                        ~~~~~~~~~~~~~~~~~~~~~~[0m
+    The last overload is declared here.
+
+[INFO] 2021-09-23 15:18:01:181 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:18:56:1856 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:19:56:1956 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:20:30:2030 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:20:52:2052 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:25:36:2536 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:26:36:2636 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 15:27:01:271 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 16:29:04:294 - Server is running on http://localhost:4000
+[INFO] 2021-09-23 16:29:26:2926 - Server is running on http://localhost:4000
