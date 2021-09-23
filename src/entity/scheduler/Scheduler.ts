@@ -1,4 +1,4 @@
-import { Column, Entity,  Index,  JoinColumn,  ManyToOne,  OneToOne} from "typeorm";
+import { Column, Entity,  JoinColumn,  ManyToOne } from "typeorm";
 import { TimeEntity  } from "../TimeEntity";
 import { EmptyEntity } from "../EmptyEntity";
 import { Protocol } from "../protocol/Protocol";
@@ -9,7 +9,7 @@ import { UuidEntity } from "../UuidEntity";
 export class Scheduler extends UuidEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
   @ManyToOne(() => Protocol, { nullable: true })
-  @JoinColumn()
+  @JoinColumn({ name: 'protocol_id' })
   protocol: Protocol;
 
   @Column()

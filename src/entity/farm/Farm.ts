@@ -13,14 +13,14 @@ import { FarmStakeToken } from "./FarmStakeToken";
 @Index('idx_farm_3', ['protocol', 'address', 'pid'], { unique: true })
 export class Farm extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @ManyToOne(() => Protocol)
-  @JoinColumn()
+  @ManyToOne(() => Protocol, { nullable: false })
+  @JoinColumn({ name: 'protocol_id' })
   protocol: Protocol;
 
   @Column()
   name: string;
 
-  @Column({ nullable: true})
+  @Column({ nullable: true })
   address: string;
 
   @Column({ nullable: true })

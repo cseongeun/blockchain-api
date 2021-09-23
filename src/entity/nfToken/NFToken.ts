@@ -9,8 +9,8 @@ import { StatusEntity } from "../StatusEntity";
 @Index('idx_nfToken_1', ['protocol', 'address', 'index'])
 export class NFToken extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @ManyToOne(() => Protocol)
-  @JoinColumn()
+  @ManyToOne(() => Protocol, { nullable: false })
+  @JoinColumn({ name: 'protocol_id' })
   protocol: Protocol;
 
   @Column()

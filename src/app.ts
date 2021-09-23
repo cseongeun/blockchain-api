@@ -28,6 +28,7 @@ export class App {
                 middlewares: [`${__dirname}/middleware/*.ts`]
             });
         } catch (error) {
+            console.log(error)
             logger.error(error);
         }
     }

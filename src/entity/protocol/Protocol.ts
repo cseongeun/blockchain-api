@@ -14,15 +14,15 @@ import { Scheduler } from "../scheduler/Scheduler";
 @Index('idx_protocol_1', ['network', 'token'], { unique: true })
 export class Protocol extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @ManyToOne(() => Network)
-  @JoinColumn()
+  @ManyToOne(() => Network, { nullable: false })
+  @JoinColumn({ name: 'network_id' })
   network: Network;
 
   @Column()
   name: string;
 
   @OneToOne(() => Token, { nullable: true })
-  @JoinColumn()
+  @JoinColumn({ name: 'token_id' })
   token: Token;
 
   @Column({ default: false })
@@ -41,15 +41,19 @@ export class Protocol extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
   logo_link: string;
 
   @OneToMany(() => Farm, farm => farm.protocol)
+  @JoinColumn({ name: 'farms' })
   farms: Farm[]
 
   @OneToMany(() => Lending, lending => lending.protocol)
+  @JoinColumn({ name: 'lendings' })
   lendings: Lending[]
 
   @OneToMany(() => NFToken, nfToken => nfToken.protocol)
+  @JoinColumn({ name: 'nfTokens' })
   nfTokens: NFToken[]
   
   @OneToMany(() => Scheduler, scheduler => scheduler.protocol)
+  @JoinColumn({ name: 'schedulers' })
   schedulers: Scheduler[]
 
 }

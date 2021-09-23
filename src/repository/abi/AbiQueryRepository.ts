@@ -11,13 +11,12 @@ export class AbiQueryRepository {
       .getMany();
   }
 
-  findOneByChainIdWithAddress(chainId: number, address: string) {
+  getDataByChainIdWithAddress(chainId: number, address: string) {
     return createQueryBuilder()
-      .select('abi')
+      .select('abi.data')
       .from(Abi, 'abi')
       .innerJoin('abi.network', 'network', 'network.chain_id = :chainId', { chainId })
       .where('abi.address = :address', { address })
-      .getRawOne();
+      .getOne();
   }  
-
 }

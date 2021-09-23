@@ -7,10 +7,11 @@ import { Farm } from "./Farm";
 @Entity()
 export class FarmRewardToken extends IdEntity(EmptyEntity) {
 
-  @ManyToOne(() => Farm, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Farm, { onDelete: 'CASCADE', nullable: false })
+  @JoinColumn({ name: 'farm_id' })
   farm: Farm;
 
-  @ManyToOne(() => Token, { onDelete: 'CASCADE' })
-  @JoinColumn()
+  @ManyToOne(() => Token, { onDelete: 'CASCADE', nullable: false })
+  @JoinColumn({ name: 'token_id' })
   token: Token;
 }

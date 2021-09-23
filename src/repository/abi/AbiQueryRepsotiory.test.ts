@@ -1,7 +1,7 @@
 import { getCustomRepository } from "typeorm";
-import { testConnection } from "../../testConnection";
-import { Abi } from "../../../src/entity/abi/Abi";
-import { AbiQueryRepository } from "../../../src/repository/abi/AbiQueryRepository";
+import { testConnection } from "../../../test/testConnection";
+import { Abi } from "../../entity/abi/Abi";
+import { AbiQueryRepository } from "./AbiQueryRepository";
 
 
 describe('Abi 조회 테스트', () => {
@@ -18,10 +18,6 @@ describe('Abi 조회 테스트', () => {
     beforeEach(async () => {
       abiQueryRepository = getCustomRepository(AbiQueryRepository);
     });
-
-    // afterEach(async () => {
-    //     await testConnection.clear();
-    // });
     
     describe('다중 조화',  () => {
       it('findAll()', async () => { 
@@ -33,7 +29,7 @@ describe('Abi 조회 테스트', () => {
 
     describe('단일 조회', () => {
       it('findOneByChainIdWithAddress()', async () => {
-        const entity = await abiQueryRepository.findOneByChainIdWithAddress(1, '0xc2EdaD668740f1aA35E4D8f227fB8E17dcA888Cd')
+        const entity = await abiQueryRepository.getDataByChainIdWithAddress(1, '0xc2EdaD668740f1aA35E4D8f227fB8E17dcA888Cd')
         console.log(entity)
       })
     })

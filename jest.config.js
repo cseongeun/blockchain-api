@@ -4,9 +4,10 @@ module.exports = {
         "<rootDir>/node_modules/"
     ],
     testMatch: [
-        '<rootDir>/test/unit/**/*.test.ts',
-        '<rootDir>/test/config/**/*.test.ts',
-        '<rootDir>/test/integration/**/*.test.ts',
+        '<rootDir>/src/**/**/*.test.ts'
+        // '<rootDir>/test/unit/**/*.test.ts',
+        // '<rootDir>/test/config/**/*.test.ts',
+        // '<rootDir>/test/integration/**/*.test.ts',
     ],
     transform: {
         '^.+\\.(t|j)s$': 'ts-jest',

@@ -5,6 +5,7 @@ import { env } from "./env";
 import { ConstraintSnakeNamingStrategy } from "./ConstraintSnakeNamingStrategy";
 
 const config: ConnectionOptions = {
+    name: 'default',
     type: "mysql",
     host: env.database.host,
     port: env.database.port,

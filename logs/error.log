@@ -257,3 +257,5 @@
     [7m  [0m [96m                        ~~~~~~~~~~~~~~~~~~~~~~[0m
     The last overload is declared here.
 
+[ERROR] 2021-09-24 00:16:12:1612 - Class constructor SnakeNamingStrategy cannot be invoked without 'new'
+[ERROR] 2021-09-24 00:16:31:1631 - Class constructor SnakeNamingStrategy cannot be invoked without 'new'

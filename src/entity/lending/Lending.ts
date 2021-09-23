@@ -12,12 +12,12 @@ import { Token } from "../token/Token";
 @Index('idx_lending_3', ['protocol', 'address', 'pid'], { unique: true })
 export class Lending extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @ManyToOne(() => Protocol)
-  @JoinColumn()
+  @ManyToOne(() => Protocol, { nullable: false })
+  @JoinColumn({ name: 'protocol_id' })
   protocol: Protocol;
 
-  @ManyToOne(() => Token)
-  @JoinColumn()
+  @ManyToOne(() => Token, { nullable: false })
+  @JoinColumn({ name: 'token_id' })
   token: Token;
 
   @Column({ nullable: true })

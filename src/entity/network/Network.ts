@@ -1,4 +1,4 @@
-import { Column, Entity, Index, OneToMany} from "typeorm";
+import { Column, Entity, Index, JoinColumn, OneToMany} from "typeorm";
 import { EmptyEntity } from "../EmptyEntity";
 import { TimeEntity  } from "../TimeEntity";
 import { StatusEntity } from "../StatusEntity";
@@ -36,11 +36,14 @@ export class Network  extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))){
   explorer_url: string;
   
   @OneToMany(() => Protocol, protocol => protocol.network)
+  @JoinColumn({ name: 'protocols' })
   protocols: Protocol[]
   
   @OneToMany(() => Abi, abi => abi.network)
+  @JoinColumn({ name: 'abis' })
   abis: Abi[]
 
   @OneToMany(() => Token, token => token.network)
+  @JoinColumn({ name: 'tokens' })
   tokens: Token[]
 }
