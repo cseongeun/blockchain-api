@@ -1,4 +1,4 @@
-import { Column, Entity,  Index,  JoinColumn,  OneToOne} from "typeorm";
+import { Column, Entity,  Index,  JoinColumn,  ManyToOne,  OneToOne} from "typeorm";
 import { TimeEntity  } from "../TimeEntity";
 import { EmptyEntity } from "../EmptyEntity";
 import { IdEntity } from "../IdEntity";
@@ -9,7 +9,7 @@ import { StatusEntity } from "../StatusEntity";
 @Index('idx_nfToken_1', ['protocol', 'address', 'index'])
 export class NFToken extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @OneToOne(() => Protocol)
+  @ManyToOne(() => Protocol)
   @JoinColumn()
   protocol: Protocol;
 

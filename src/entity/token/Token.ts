@@ -1,4 +1,4 @@
-import { Column, Entity,  Index,  JoinColumn,  OneToOne} from "typeorm";
+import { Column, Entity,  Index,  JoinColumn,  ManyToMany,  ManyToOne,  OneToOne} from "typeorm";
 import { TimeEntity  } from "../TimeEntity";
 import { EmptyEntity } from "../EmptyEntity";
 import { IdEntity } from "../IdEntity";
@@ -6,10 +6,10 @@ import { Network } from '../network/Network';
 import { StatusEntity } from "../StatusEntity";
 
 @Entity()
-@Index('idx_token_1', ['network', 'address'], { unique: false })
+@Index('idx_token_1', ['network', 'address'], { unique: true })
 export class Token extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @OneToOne(() => Network)
+  @ManyToOne(() => Network)
   @JoinColumn()
   network: Network;
 
@@ -31,11 +31,11 @@ export class Token extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
   @Column('decimal', { precision: 65, scale: 22, default: 0 })
   total_supply: string;
 
-  @OneToOne(() => Token, { nullable: true, onDelete: 'CASCADE' })
+  @ManyToOne(() => Token, { nullable: true, onDelete: 'CASCADE' })
   @JoinColumn()
   pair0: Token;
 
-  @OneToOne(() => Token, { nullable: true, onDelete: 'CASCADE' })
+  @ManyToOne(() => Token, { nullable: true, onDelete: 'CASCADE' })
   @JoinColumn()
   pair1: Token;
 

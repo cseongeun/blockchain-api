@@ -21,6 +21,12 @@ export const testConnection = {
     },
 
     hasDefaultConnection() {
+        try {
+            console.log(getConnection())
+
+        } catch (e) {
+            console.log(e);
+        }
         return getConnectionManager().has("default");
     },
 

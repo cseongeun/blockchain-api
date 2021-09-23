@@ -7,13 +7,13 @@ export type Constructor<T = {}> = new (...args: any[]) => T
 export function TimeEntity<TBaseTime extends Constructor>(BaseTime: TBaseTime) {
     abstract class AbstractEntity extends BaseTime {
             @CreateDateColumn({type:"timestamp"})
-            createdAt: Date;
+            created_at: Date;
         
             @UpdateDateColumn({type:"timestamp"})
-            updatedAt: Date;
+            updated_at: Date;
         
             @Column({type:"timestamp", nullable: true})
-            deletedAt?: Date | null;
+            deleted_at?: Date | null;
     }
 
     return AbstractEntity

@@ -28,15 +28,15 @@ const config: ConnectionOptions = {
         "subscribersDir": "src/subscriber",
         "entitiesDir": "src/entity",
     },
-    // namingStrategy: new ConstraintSnakeNamingStrategy(),
 }
 
 export async function createDatabaseConnection(): Promise<void> {
     useContainer(Container);
     if(!getConnectionManager().has("default")) {
-        await createConnection(Object.assign(config, {    
-            namingStrategy: new ConstraintSnakeNamingStrategy(),
-        }))
+        await createConnection({    
+            ...config,
+            namingStrategy: new ConstraintSnakeNamingStrategy(), 
+        })
     }
 }
 

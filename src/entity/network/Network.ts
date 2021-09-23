@@ -1,8 +1,11 @@
-import { Column, Entity, Index} from "typeorm";
+import { Column, Entity, Index, OneToMany} from "typeorm";
 import { EmptyEntity } from "../EmptyEntity";
 import { TimeEntity  } from "../TimeEntity";
 import { StatusEntity } from "../StatusEntity";
 import { IdEntity } from "../IdEntity";
+import { Abi } from "../abi/Abi";
+import { Token } from "../token/Token";
+import { Protocol } from "../protocol/Protocol";
 
 @Entity()
 @Index('idx_network_1', ['chain_id'])
@@ -32,4 +35,12 @@ export class Network  extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))){
   @Column()
   explorer_url: string;
   
+  @OneToMany(() => Protocol, protocol => protocol.network)
+  protocols: Protocol[]
+  
+  @OneToMany(() => Abi, abi => abi.network)
+  abis: Abi[]
+
+  @OneToMany(() => Token, token => token.network)
+  tokens: Token[]
 }

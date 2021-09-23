@@ -9,27 +9,30 @@ describe('Network 조회 테스트', () => {
     beforeAll(async () => {
         await testConnection.create();
     });
+    it('aa', async () => {
+      console.log('1')
+    })
 
-    afterAll(async () => {
-        await testConnection.close();
-    });
+    // afterAll(async () => {
+    //     await testConnection.close();
+    // });
 
-    beforeEach(async () => {
-      networkQueryRepository = getCustomRepository(NetworkQueryRepository);
-    });
+    // beforeEach(async () => {
+    //   networkQueryRepository = getCustomRepository(NetworkQueryRepository);
+    // });
 
-    afterEach(async () => {
-        // await testConnection.clear();
-    });
+    // afterEach(async () => {
+    //     // await testConnection.clear();
+    // });
     
-    it('다중 조회', async () => { 
-      const entities = await networkQueryRepository.findAll();
-    })
+    // it('다중 조회', async () => { 
+    //   const entities = await networkQueryRepository.findAll();
+    // })
 
-    describe('단일 조회', async () => {
-      it('체인 넘버', async () => {
-        const entity = await networkQueryRepository.findOneByChainId(1)
-      })
-    })
+    // describe('단일 조회', () => {
+    //   it('체인 넘버', async () => {
+    //     const entity = await networkQueryRepository.findOneByChainId(1)
+    //   })
+    // })
 
 })

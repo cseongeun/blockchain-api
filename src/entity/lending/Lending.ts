@@ -1,4 +1,4 @@
-import { Column, Entity,  Index,  JoinColumn,  OneToOne} from "typeorm";
+import { Column, Entity,  Index,  JoinColumn,  ManyToOne } from "typeorm";
 import { TimeEntity  } from "../TimeEntity";
 import { EmptyEntity } from "../EmptyEntity";
 import { IdEntity } from "../IdEntity";
@@ -7,15 +7,16 @@ import { StatusEntity } from "../StatusEntity";
 import { Token } from "../token/Token";
 
 @Entity()
-@Index('idx_lending_1', ['protocol', 'address'])
-@Index('idx_lending_2', ['protocol', 'pid'])
+@Index('idx_lending_1', ['protocol', 'address'], { unique: false })
+@Index('idx_lending_2', ['protocol', 'pid'], { unique: false })
+@Index('idx_lending_3', ['protocol', 'address', 'pid'], { unique: true })
 export class Lending extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @OneToOne(() => Protocol)
+  @ManyToOne(() => Protocol)
   @JoinColumn()
   protocol: Protocol;
 
-  @OneToOne(() => Token)
+  @ManyToOne(() => Token)
   @JoinColumn()
   token: Token;
 

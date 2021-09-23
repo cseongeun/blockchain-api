@@ -1,4 +1,4 @@
-import {  Entity, JoinColumn, ManyToOne, OneToOne} from "typeorm";
+import {  Entity, JoinColumn, ManyToOne } from "typeorm";
 import { EmptyEntity } from "../EmptyEntity";
 import { IdEntity } from "../IdEntity";
 import { Token } from "../token/Token";
@@ -7,10 +7,10 @@ import { Farm } from "./Farm";
 @Entity()
 export class FarmRewardToken extends IdEntity(EmptyEntity) {
 
-  @ManyToOne(() => Farm, farm => farm.id, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Farm, { onDelete: 'CASCADE' })
   farm: Farm;
 
-  @OneToOne(() => Token)
+  @ManyToOne(() => Token, { onDelete: 'CASCADE' })
   @JoinColumn()
   token: Token;
 }

@@ -1,4 +1,4 @@
-import { Column, Entity,  Index,  JoinColumn,  OneToMany,  OneToOne} from "typeorm";
+import { Column, Entity,  Index,  JoinColumn,  ManyToOne,  OneToMany } from "typeorm";
 import { TimeEntity  } from "../TimeEntity";
 import { EmptyEntity } from "../EmptyEntity";
 import { IdEntity } from "../IdEntity";
@@ -8,11 +8,12 @@ import { FarmRewardToken } from "./FarmRewardToken";
 import { FarmStakeToken } from "./FarmStakeToken";
 
 @Entity()
-@Index('idx_farm_1', ['protocol', 'address'])
-@Index('idx_farm_2', ['protocol', 'pid'])
+@Index('idx_farm_1', ['protocol', 'address'], { unique: false })
+@Index('idx_farm_2', ['protocol', 'pid'], { unique: false })
+@Index('idx_farm_3', ['protocol', 'address', 'pid'], { unique: true })
 export class Farm extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
 
-  @OneToOne(() => Protocol)
+  @ManyToOne(() => Protocol)
   @JoinColumn()
   protocol: Protocol;
 
