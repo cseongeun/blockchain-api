@@ -22,4 +22,31 @@ describe('PancakeSwap.BSC 테스트', () => {
     await service.initialize();
   })
 
+  describe('Constant', () => {
+    it('all', () => {
+      expect(service.farmName()).toBeDefined()
+      expect(service.farmAddress()).toBeDefined()
+      expect(service.farmDeployHash()).toBeDefined()
+      expect(service.farmAbi()).toBeDefined()
+      expect(service.farmContract()).toBeDefined()
+      expect(service.farm2Name()).toBeDefined()
+      expect(service.farm2Address()).toBeDefined()
+      expect(service.farm2DeployHash()).toBeDefined()
+      expect(service.farm2Abi()).toBeDefined()
+      // expect(service.farm2Contract()).toBeDefined() // need argument
+      expect(service.ammName()).toBeDefined()
+      expect(service.ammAddress()).toBeDefined()
+      expect(service.ammDeployHash()).toBeDefined()
+      expect(service.ammAbi()).toBeDefined()
+      expect(service.ammContract()).toBeDefined()
+    })
+  })
+
+  describe('getFarmInfos', () => {
+    it('working', async () => {
+      const farmInfos = await service.getFarmInfos([1]);
+      console.log(farmInfos)
+    })
+  })
+
 })

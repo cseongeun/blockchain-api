@@ -48,6 +48,6 @@ export class Network  extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))){
   tokens: Token[]
 
   getHTTPConfig() {
-    return JSON.parse(JSON.stringify(this.http));
+    return this.http
   }
 }

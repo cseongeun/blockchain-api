@@ -43,10 +43,6 @@ export default class ModuleBase implements Module {
 
     // module constants, each module folder's constant file
     public constants: { [key: string]: any },
-
-    // module interface, each module folder's interface folder (separated network)
-    protected interfaces: any,
-
   ) {}
 
   async initialize(): Promise<void> {
@@ -99,11 +95,17 @@ export default class ModuleBase implements Module {
     try {
       const providers: Provider[] = [];
 
-      for (const { type, url } of httpConfig) {
+      for (const { type, url } of JSON.parse(httpConfig)) {
+        let provider: Provider;
         if (type === 'OCTET') {
-          providers.push(new ethers.providers.JsonRpcProvider({ url, ...octetConfig }))
+          provider = new ethers.providers.JsonRpcProvider({ url, ...octetConfig })
+        } else {
+          provider = new ethers.providers.JsonRpcProvider({ url })
         } 
-        providers.push(new ethers.providers.JsonRpcProvider({ url }))
+
+        // TODO: check health provider 
+
+        providers.push(provider)
       }
       
       if (providers.length < 0) {
@@ -113,6 +115,15 @@ export default class ModuleBase implements Module {
       return providers;
     } catch (e) {
       throw new Error(`Failed to generate http provider, <module.name: ${this.name}, module.chainId: ${this.chainId}>`);
+    }
+  }
+
+  async _checkHealth(provider: Provider) {
+    try {
+      await provider.getBlockNumber();
+      return true;
+    } catch (e) {
+      return false;
     }
   }
 

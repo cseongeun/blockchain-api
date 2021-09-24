@@ -9,14 +9,13 @@ import { Contract } from '@ethersproject/contracts';
 import { ethers } from 'ethers';
 import { decodeFunctionResultData, encodeFunction } from '../../helper/encodeDecodeHelper';
 import { getBatchStaticAggregator } from '../../helper/multicallHelper';
-import { INTERFACE } from './interface';
-
+import {  FarmInfoDTO } from './interface/bsc';
 
 @Service(getModuleId(PROTOCOL.PANCAKE_SWAP, CHAIN_ID.BSC))
 export default class PancakeSwapBSC extends AMMBase(FarmBase(ModuleBase)) {
  
   constructor() {
-    super(PROTOCOL.PANCAKE_SWAP, CHAIN_ID.BSC, INFO[CHAIN_ID.BSC], INTERFACE[CHAIN_ID.BSC])
+    super(PROTOCOL.PANCAKE_SWAP, CHAIN_ID.BSC, INFO[CHAIN_ID.BSC])
   }
 
   getUserAMMs(): Promise<any> {
@@ -61,8 +60,8 @@ export default class PancakeSwapBSC extends AMMBase(FarmBase(ModuleBase)) {
 
   ammContract = (): Contract => new ethers.Contract(this.ammAddress(), this.ammAbi(), this.provider);
 
-
-  async getFarmInfos(pids: number[]): Promise<typeof this.interfaces.FarmInfo> {
+  // 1 -> 1
+  async getFarmInfos(pids: number[]): Promise<FarmInfoDTO[]> {
     const farmInfoEncode = pids.map((pid: number) => {
       return [this.farmAddress(), encodeFunction(this.farmAbi(), 'poolInfo', [pid])]
     })
@@ -73,8 +72,6 @@ export default class PancakeSwapBSC extends AMMBase(FarmBase(ModuleBase)) {
       return success ? decodeFunctionResultData(this.farmAbi(), 'poolInfo', returnData) : []
     })
   }
-
-
 }
 
 
