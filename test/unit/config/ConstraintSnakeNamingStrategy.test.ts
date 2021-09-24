@@ -1,4 +1,4 @@
-import {ConstraintSnakeNamingStrategy} from "../../../src/config/ConstraintSnakeNamingStrategy";
+import {ConstraintSnakeNamingStrategy} from "../../../src/config/lib/ConstraintSnakeNamingStrategy";
 
 describe('TypeORM naming Strategy', () => {
     let strategy: ConstraintSnakeNamingStrategy;

@@ -27,4 +27,7 @@ export const env = {
         logging: process.env.TYPEORM_LOGGING === "true",
         dropSchema: process.env.TYPEORM_DROP_SCHEMA === "true",
     },
+    octet: {
+        token: process.env.OCTET_EXPLORER_API_TOKEN
+    }
 };

@@ -27,7 +27,7 @@ export class Network  extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))){
   multi_call_address: string;
 
   @Column('text')
-  http: string;
+  http: string[];
 
   @Column()
   block_time_sec: number;
@@ -46,4 +46,8 @@ export class Network  extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))){
   @OneToMany(() => Token, token => token.network)
   @JoinColumn({ name: 'tokens' })
   tokens: Token[]
+
+  getHTTPConfig() {
+    return JSON.parse(JSON.stringify(this.http));
+  }
 }

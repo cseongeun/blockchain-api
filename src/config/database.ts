@@ -1,8 +1,7 @@
-import "reflect-metadata";
 import Container from "typedi";
 import { ConnectionOptions, createConnection, getConnectionManager, useContainer } from "typeorm";
 import { env } from "./env";
-import { ConstraintSnakeNamingStrategy } from "./ConstraintSnakeNamingStrategy";
+import { ConstraintSnakeNamingStrategy } from "./lib/ConstraintSnakeNamingStrategy";
 
 const config: ConnectionOptions = {
     name: 'default',
@@ -13,7 +12,7 @@ const config: ConnectionOptions = {
     password: env.database.password,
     database: env.database.database,
     synchronize: false,
-    logging: true,
+    logging: 'all',
     dropSchema: false,
     entities: [
         "src/entity/**/*.ts",

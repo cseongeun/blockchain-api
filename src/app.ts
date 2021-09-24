@@ -3,7 +3,7 @@ import { useContainer as routingUseContainer, useExpressServer } from "routing-c
 import * as path from "path";
 import { Container } from "typedi";
 import * as bodyParser from "body-parser";
-import logger from "./config/logger";
+import logger from "./config/lib/logger";
 import express = require("express");
 import { ArticleController } from "./controller/article/ArticleController";
 

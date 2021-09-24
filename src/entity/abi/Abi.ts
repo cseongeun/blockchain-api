@@ -17,6 +17,11 @@ export class Abi extends IdEntity(EmptyEntity) {
   @Column('longtext')
   data: string;
 
+
+  getABI(): unknown {
+    return JSON.parse(JSON.stringify(this.data))
+  } 
+
   /* Hooks */
   @BeforeInsert()
   checkSumAddress(): Promise<void> {

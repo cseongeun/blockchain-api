@@ -2,7 +2,7 @@
 import { Body, Get, HttpCode, JsonController, Param, Post, QueryParams, Res } from "routing-controllers";
 import { Response } from "express";
 // import { ArticleCreateParam } from "../../service/article/dto/ArticleCreateParam";
-import logger from "../../config/logger";
+import logger from "../../config/lib/logger";
 // import { ArticleSearchRequest } from "./dto/ArticleSearchRequest";
 
 @JsonController("/article")

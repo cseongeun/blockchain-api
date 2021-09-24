@@ -1,4 +1,5 @@
 import { Generated, PrimaryColumn, ValueTransformer} from "typeorm";
+import { Constructor } from '../helper/mixInHelper'
 
 /**
  * `JSON.stringify` 이슈로 인해 `find` 함수들에서 모두 에러가 발생한다.
@@ -25,9 +26,6 @@ export class BigintValueTransformer implements ValueTransformer {
         return parseInt(databaseValue, 10);
     }
 }
-
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type Constructor<T = {}> = new (...args: any[]) => T
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function IdEntity<TId extends Constructor>(Id: TId) {

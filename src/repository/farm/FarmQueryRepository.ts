@@ -11,6 +11,14 @@ export class FarmQueryRepository {
       .getMany();
   }
 
+  findAllByProtocolId(protocolId: number) {
+    return createQueryBuilder()
+      .select('farm')
+      .from(Farm, 'farm')
+      .where('farm.protocol_id = :protocolId', { protocolId } )
+      .getMany();
+  } 
+
   // findOneByChainId(chainId: number) {
   //   return createQueryBuilder()
   //     .select('farm')

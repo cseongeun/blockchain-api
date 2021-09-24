@@ -26,14 +26,17 @@ export class Protocol extends IdEntity(TimeEntity(StatusEntity(EmptyEntity))) {
   token: Token;
 
   @Column({ default: false })
-  check_farm: boolean;
+  use_amm: boolean;
 
   @Column({ default: false })
-  check_nft: boolean;
+  use_farm: boolean;
 
   @Column({ default: false })
-  check_lending: boolean;
+  use_nft: boolean;
 
+  @Column({ default: false })
+  use_lending: boolean;
+  
   @Column({ nullable: true })
   link: string;
 

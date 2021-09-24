@@ -4,19 +4,20 @@ import { Network } from '../../entity/network/Network';
 @EntityRepository(Network) 
 export class NetworkQueryRepository {
 
-  findAll() {
+  findActivatedAll() {
     return createQueryBuilder()
       .select('network')
       .from(Network, 'network')
+      .where('network.status = :status', { status: true } )
       .getMany();
   }
 
-  findOneByChainId(chainId: number) {
+  findActivatedOneByChainId(chainId: number) {
     return createQueryBuilder()
       .select('network')
       .from(Network, 'network')
       .where('network.chain_id = :chainId', { chainId }) 
+      .andWhere('network.status = :status', { status: true } )
       .getOne();
   }  
-
 }

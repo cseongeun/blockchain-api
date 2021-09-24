@@ -19,12 +19,11 @@ describe('Abi 조회 테스트', () => {
       abiQueryRepository = getCustomRepository(AbiQueryRepository);
     });
     
-    describe('다중 조화',  () => {
+    describe('다중 조회',  () => {
       it('findAll()', async () => { 
         const entities = await abiQueryRepository.findAll();
         console.log(entities)
       })
-  
     })
 
     describe('단일 조회', () => {

@@ -1,7 +1,5 @@
 import { Generated, PrimaryColumn, PrimaryGeneratedColumn} from "typeorm";
-
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type Constructor<T = {}> = new (...args: any[]) => T
+import { Constructor } from '../helper/mixInHelper'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function UuidEntity<TId extends Constructor>(Id: TId) {
