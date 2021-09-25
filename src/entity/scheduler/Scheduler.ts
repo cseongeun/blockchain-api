@@ -35,4 +35,12 @@ export class Scheduler extends UuidEntity(TimeEntity(StatusEntity(EmptyEntity)))
 
   @Column({ default: 0 })
   process: boolean;
+
+  updateBlockNumber(blockNumber: number) {
+    this.block_number = blockNumber;
+  }
+
+  updatePid(pid: number) {
+    this.block_number = pid;
+  }
 }

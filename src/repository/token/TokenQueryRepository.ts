@@ -19,5 +19,5 @@ export class TokenQueryRepository {
       .innerJoin('token.network', 'network', 'network.chain_id = :chainId', { chainId })
       .where('token.address = :address', { address })
       .getOne();
-  }  
+  }
 }

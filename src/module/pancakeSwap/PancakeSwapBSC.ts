@@ -7,9 +7,10 @@ import { PROTOCOL, CHAIN_ID } from '../../helper/constantHelper';
 import { getModuleId } from '../ModuleId';
 import { Contract } from '@ethersproject/contracts';
 import { ethers } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
+
 import { decodeFunctionResultData, encodeFunction } from '../../helper/encodeDecodeHelper';
 import { getBatchStaticAggregator } from '../../helper/multicallHelper';
-import {  FarmInfoDTO } from './interface/bsc';
 
 @Service(getModuleId(PROTOCOL.PANCAKE_SWAP, CHAIN_ID.BSC))
 export default class PancakeSwapBSC extends AMMBase(FarmBase(ModuleBase)) {
@@ -60,18 +61,46 @@ export default class PancakeSwapBSC extends AMMBase(FarmBase(ModuleBase)) {
 
   ammContract = (): Contract => new ethers.Contract(this.ammAddress(), this.ammAbi(), this.provider);
 
-  // 1 -> 1
-  async getFarmInfos(pids: number[]): Promise<FarmInfoDTO[]> {
-    const farmInfoEncode = pids.map((pid: number) => {
-      return [this.farmAddress(), encodeFunction(this.farmAbi(), 'poolInfo', [pid])]
-    })
+  async getFarmTotalLength(): Promise<BigNumber> {
+    return this.farmContract().poolLength();
+  }
+
+  async getFarmInfos(
+    pids: number[]
+  ): Promise<{ 
+    lpToken: string, 
+    allocPoint: BigNumber, 
+    lastRewardBlock: BigNumber, 
+    accCakePerShare: BigNumber 
+  }[]> {
+    const farmInfoEncode = pids.map((pid: number) => [this.farmAddress(), encodeFunction(this.farmAbi(), 'poolInfo', [pid])])
 
     const farmInfoBatchCall = await getBatchStaticAggregator(this.provider, this.multiCallAddress, farmInfoEncode);
     
     return farmInfoBatchCall.map(({ success, returnData }) => {
-      return success ? decodeFunctionResultData(this.farmAbi(), 'poolInfo', returnData) : []
+      return success ? decodeFunctionResultData(this.farmAbi(), 'poolInfo', returnData)[0] : []
     })
   }
+
+  async getAMMTotalLength(): Promise<BigNumber> {
+    return this.ammContract().allPairsLength();
+  }
+
+  async getAMMInfos(
+    pids: number[]
+  ): Promise<string[]> {
+    const ammInfoEncode = pids.map((pid: number) => [this.ammAddress(), encodeFunction(this.ammAbi(), 'allPairs', [pid])]);
+  
+    const ammInfoBatchCall = await getBatchStaticAggregator(this.provider, this.multiCallAddress, ammInfoEncode);
+  
+    return ammInfoBatchCall.map(({ success, returnData }) => {
+      return success ? decodeFunctionResultData(this.ammAbi(), 'allPairs', returnData)[0] : [];
+    })
+  }
+
+  async getAMMComposedPair(pairs: string[]): Promise<{ pair: string, token0: string, token1: string }> {
+  }
+
 }
 
 

@@ -4,27 +4,30 @@ import { Farm } from '../../entity/farm/Farm';
 @EntityRepository(Farm) 
 export class FarmQueryRepository {
 
-  findAll() {
+  findActivatedAll() {
     return createQueryBuilder()
       .select('farm')
       .from(Farm, 'farm')
+      .where('farm.status = :status', { status: true })
       .getMany();
   }
 
-  findAllByProtocolId(protocolId: number) {
+  findActivatedAllByProtocolId(protocolId: number) {
     return createQueryBuilder()
       .select('farm')
       .from(Farm, 'farm')
-      .where('farm.protocol_id = :protocolId', { protocolId } )
+      .where('farm.status = :status', { status: true })
+      .andWhere('farm.protocol_id = :protocolId', { protocolId } )
       .getMany();
   } 
 
-  // findOneByChainId(chainId: number) {
-  //   return createQueryBuilder()
-  //     .select('farm')
-  //     .from(farm, 'farm')
-  //     .where('network.chain_id = :chainId', { chainId }) 
-  //     .getOne();
-  // }  
+  findActivatedAllByChainId(chainId: number) {
+    return createQueryBuilder()
+      .select('farm')
+      .from(Farm, 'farm')
+      .where('farm.status = :status', { status: true })
+      .andWhere('farm.network.chain_id = :chainId', { chainId }) 
+      .getOne();
+  }  
 
 }

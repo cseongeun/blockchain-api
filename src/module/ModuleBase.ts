@@ -11,14 +11,14 @@ import { isUndefined } from '../helper/typeHelper';
 import { Abi } from '../entity/abi/Abi';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 
-export interface Module {
+export interface IModule {
   provider: Provider;
   blockTimeSecond: number;
   getBlockNumber(): Promise<number>
   initialize(): void;
 }
 
-export default class ModuleBase implements Module {
+export default class ModuleBase implements IModule {
 
   @InjectRepository() private readonly networkQueryRepository: NetworkQueryRepository;
   @InjectRepository() private readonly protocolQueryRepository: ProtocolQueryRepository;
@@ -132,8 +132,13 @@ export default class ModuleBase implements Module {
       try {
         const findABIAddress = [];
 
-        if (!isUndefined(address)) findABIAddress.push(address)
-        if (!isUndefined(sample_address)) findABIAddress.push(sample_address)
+        if (!isUndefined(address)) {
+          findABIAddress.push(address)
+        } 
+
+        if (!isUndefined(sample_address)) {
+          findABIAddress.push(sample_address)
+        }
 
         const abiEntity = await this.abiQueryRepository.findAllByChainIdWithAddresses(this.chainId, findABIAddress);
 

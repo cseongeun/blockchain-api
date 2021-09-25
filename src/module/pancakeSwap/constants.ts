@@ -1,7 +1,5 @@
 import { CHAIN_ID } from '../../helper/constantHelper';
 
-export const NAME = 'PancakeSwap';
-
 export const INFO = {
   [CHAIN_ID.BSC]: {
     farm: {

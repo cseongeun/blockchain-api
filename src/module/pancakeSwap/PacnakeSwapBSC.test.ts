@@ -42,11 +42,35 @@ describe('PancakeSwap.BSC 테스트', () => {
     })
   })
 
-  describe('getFarmInfos', () => {
-    it('working', async () => {
-      const farmInfos = await service.getFarmInfos([1]);
-      console.log(farmInfos)
+  describe('Farm', () => {
+    describe('getFarmTotalLength()', () => {
+      it('is working', async () => {
+        const farmTotalLength = await service.getFarmTotalLength();
+        console.log(farmTotalLength)
+      })
     })
+    describe('getFarmInfos()', () => {
+      it('is working', async () => {
+        const farmInfos = await service.getFarmInfos([1, 2]);
+        console.log(farmInfos)
+      })
+    })
+    })
+ 
+  describe('AMM', () => {
+    describe('getAMMTotalLength()', () => {
+      it('is working', async () => {
+        const ammTotalLength = await service.getAMMTotalLength();
+        console.log(ammTotalLength)
+      })
+    })
+    describe('getAMMInfos()', () => {
+      it('is working', async () => {
+        const ammInfos = await service.getAMMInfos([1, 2])
+        console.log(ammInfos)
+      })
+    })
+  
   })
 
 })

@@ -1,3 +1,4 @@
+import { isUndefined } from 'lodash';
 import {createLogger, transports, format } from 'winston';
 
 const { combine, timestamp, printf, colorize } = format;
@@ -12,6 +13,12 @@ const levels = {
 
 const level = () => {
     return isConsole() ? 'debug' : 'warn'
+}
+
+const loggerType = () => {
+    const env = process.env.LOOGER_TYPE;
+    if (isUndefined(env)) throw new Error('Not found logger type, should be setting (server, scheduler)')
+    return env.toLowerCase();
 }
 
 const isConsole = () => {
@@ -30,15 +37,15 @@ const logger = createLogger({
     ),
     transports: [
         new transports.File({
-            filename: 'logs/error.log',
+            filename: `logs/${loggerType()}/error.log`,
             level: 'error',
         }),
         new transports.File({
-            filename: 'logs/info.log',
+            filename: `logs/${loggerType()}/info.log`,
             level: 'info',
         }),
         new transports.File({
-            filename: 'logs/debug.log',
+            filename: `logs/${loggerType()}/debug.log`,
             level: 'debug',
         }),
     ]

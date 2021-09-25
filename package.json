@@ -51,7 +51,7 @@
    },
    "scripts": {
       "start": "ts-node src/start",
-      "local": "ts-node-dev --respawn --transpile-only src/start.ts PINPOINT_AGENT_ID=local",
+      "local": "ts-node-dev --respawn --transpile-only src/start.ts PINPOINT_AGENT_ID=local LOGGER_TYPE=server",
       "test": "jest --runInBand",
       "test:unit": "jest -c=jest.config.unit.js",
       "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f src/config/database.ts",

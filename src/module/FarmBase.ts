@@ -19,7 +19,7 @@ export default function Base<T extends Constructor>(C: T) {
       }
 
       async getFarms(): Promise<Farm[]> {
-        return this.farmQueryRepository.findAllByProtocolId(this.protocol.id)
+        return this.farmQueryRepository.findActivatedAllByProtocolId(this.protocol.id)
       }
 
       // find user deposit farms
