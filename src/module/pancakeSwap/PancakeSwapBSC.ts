@@ -98,9 +98,8 @@ export default class PancakeSwapBSC extends AMMBase(FarmBase(ModuleBase)) {
     })
   }
 
-  async getAMMComposedPair(pairs: string[]): Promise<{ pair: string, token0: string, token1: string }> {
-  }
 
+  
 }
 
 

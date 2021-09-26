@@ -17,18 +17,20 @@ import { add, isGreaterThan, isGreaterThanOrEqual, sub } from '../../helper/bign
 import { isNull } from '../../helper/typeHelper';
 import PancakeSwapBSC from '../../module/pancakeSwap/PancakeSwapBSC';
 import SchedulerBase from '../SchedulerBase';
+import { getBatchPairInfos } from '../../helper/multicallHelper';
+import { TokenService } from '../../service/token/tokenService';
 
 export default class PancakeSwapBSCPair extends SchedulerBase {
   
-  @Inject()
-  private readonly context: PancakeSwapBSC;
+  @Inject() private readonly context: PancakeSwapBSC;
+  @Inject() private readonly tokenService: TokenService;
   
   constructor(id: string) {
     super(id);
   }
 
   async init() {
-
+    return
   }
 
   async networkPid(): Promise<BigNumber> {
@@ -39,11 +41,63 @@ export default class PancakeSwapBSCPair extends SchedulerBase {
     return this.schedulerService.getPid(this.id) || 0;
   }
 
+  grouping(pairInfos: any[]): { uniqueMultiTokenAddresses: string[], uniqueSingleTokenAddresses: string[] } {
+    const multi = [];
+    const single = [];
+
+    pairInfos.forEach(({ pair, token0, token1 }) => {
+      multi.push(pair);
+      single.push(token0);
+      single.push(token1);
+    });
+
+    return { uniqueMultiTokenAddresses: [...new Set(multi)], uniqueSingleTokenAddresses: [...new Set(single)] };
+  }
+
+  async removeRegisteredTokens(multiTokenAddresses: string[], singleTokenAddresses: string[], transaction: any) {
+    const [registeredMultiTokens, registeredSingleTokens] = await Promise.all([
+      this.tokenService.findAll(
+        {
+          chainId: this.context.chainId,
+          addresses: multiTokenAddresses,
+        },
+      ),
+      // Scheduler.getRegisteredTokens(
+      //   {
+      //     network_id: this.context.protocol.Network.id,
+      //     address: { [Op.in]: singleTokenAddresses },
+      //   },
+      //   transaction,
+      // ),
+    ]);
+
+    // const [registeredMultiTokenAddresses, registeredSingleTokenAddresses] = [
+    //   registeredMultiTokens.map(({ address }) => address),
+    //   registeredSingleTokens.map(({ address }) => address),
+    // ];
+
+    // const [notRegisteredMultiTokenAddresses, notRegisteredSingleTokenAddresses] = [
+    //   removeStringValues(multiTokenAddresses, registeredMultiTokenAddresses, true),
+    //   removeStringValues(singleTokenAddresses, registeredSingleTokenAddresses, true),
+    // ];
+
+    // return {
+    //   notRegisteredMultiTokenAddresses,
+    //   notRegisteredSingleTokenAddresses,
+    // };
+  }
+  
+
   async doTask(sPid: number, ePid: number): Promise<void> {
     const pids = fillSequenceNumber(parseInt(sub(ePid, sPid).toString(), 10), sPid);
     const pairs = await this.context.getAMMInfos(pids);
 
-    const composed
+    // { pair: string, token0: string, token1: string }
+    const pairsComposed = await getBatchPairInfos(this.context.provider, this.context.multiCallAddress, pairs);
+    const { uniqueMultiTokenAddresses, uniqueSingleTokenAddresses } = this.grouping(pairsComposed);
+
+   
+
   
   }
 
@@ -51,7 +105,7 @@ export default class PancakeSwapBSCPair extends SchedulerBase {
     try {
       const [networkPid, schedulerPid] = await Promise.all([this.networkPid(), this.schedulerPid()])
 
-      let sPid: any = parseInt(schedulerPid.toString(), 10);
+      const sPid: any = parseInt(schedulerPid.toString(), 10);
       let ePid: any = parseInt(networkPid.toString(), 10);
 
       if (isGreaterThanOrEqual(sPid, ePid)) return;
